@@ -440,7 +440,7 @@
        }
      });
      
-      t1.from("#skills", {x:400,ease:Power2.easeOut,duration:2});
+      t1.from("#skills", {x:400,ease:Power2.easeOut,duration:1});
       let t2=gsap.timeline({
         scrollTrigger:{
           trigger:'#skills-scroll',
@@ -448,7 +448,7 @@
         //  scrub:true
         }
       })
-      t2.from(" .about-class", {x:400,duration:2,ease:Power2.easeOut,stagger:1} );
+      t2.from(" .about-class", {x:400,duration:1,ease:Power2.easeOut,stagger:1} );
 
       if (window.matchMedia("(max-width: 700px)").matches) {
   /* The viewport is less than, or equal to, 700 pixels wide */
