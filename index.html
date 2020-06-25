@@ -189,6 +189,7 @@
                     <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
                 </div>
             </div>
+            <div id="skills-scroll"></div>
             <div class="col-md-4">
                 <h4>Python</h4>
                 <div class="progress">
@@ -433,25 +434,21 @@
     <script>
      let t1=gsap.timeline({
        scrollTrigger:{
-         trigger:'#skills',
-         start:"top center",
-         end:"center center",
-        //  duration:2,
-         scrub:true,
+         trigger:'#certification',
+         
         //  pin:true,
        }
      });
      
-      t1.from("#skills", {x:400,duration:2});
+      t1.from("#skills", {x:400,ease:Power2.easeOut,duration:2});
       let t2=gsap.timeline({
         scrollTrigger:{
-          trigger:'.about-class',
-          start:"bottom center",
-         end:"bottom top",
+          trigger:'#skills-scroll',
+         
         //  scrub:true
         }
       })
-      t2.from(" .about-class", {x:400,duration:2,stagger:1} );
+      t2.from(" .about-class", {x:400,duration:2,ease:Power2.easeOut,stagger:1} );
 
       if (window.matchMedia("(max-width: 700px)").matches) {
   /* The viewport is less than, or equal to, 700 pixels wide */
@@ -469,7 +466,7 @@
         if (window.matchMedia("(max-width: 800px)").matches) {
   /* The viewport is less than, or equal to, 700 pixels wide */
         $("#about").removeClass("media");
-        $("#about>img").css('margin-left','10%');
+        $("#about>img").css('margin-left','0%');
 
         
       } else {
