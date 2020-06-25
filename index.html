@@ -174,10 +174,10 @@
             About Me
         </div>
     <div id="about" class="media" >
-        <img style="object-fit: cover;" height="500" width="300" class="align-self-center mr-3" src="images/WhatsApp Image 2020-06-25 at 17.42.01.jpeg" class="mr-3" alt="...">
+        <img  style="object-fit: cover;" height="500" width="300" class="align-self-center mr-3" src="images/WhatsApp Image 2020-06-25 at 17.42.01.jpeg" class="mr-3" alt="...">
         <div class="media-body">
           
-          <p class="about-class"> I'm a junior undergraduate currently pursuing B.Tech in Computer Science from Fr Conceicao Rodrigues College of Engineering, Mumbai. My name itself incorporates some of my qualities, such as polished behavior, calm & composed nature, and clarity of thoughts. I completely dedicate myself to the work that I am involved with and always try to give attention to details. I chose to become an engineer due to curiosity and have always been fascinated with the backend technology involved in the services that we use very frequently. </p>
+          <p id="about-me-img" class="about-class"> I'm a junior undergraduate currently pursuing B.Tech in Computer Science from Fr Conceicao Rodrigues College of Engineering, Mumbai. My name itself incorporates some of my qualities, such as polished behavior, calm & composed nature, and clarity of thoughts. I completely dedicate myself to the work that I am involved with and always try to give attention to details. I chose to become an engineer due to curiosity and have always been fascinated with the backend technology involved in the services that we use very frequently. </p>
           <p class="mb-0 about-class">I am a full-time freelance web designer who specializes in creating dynamic and beautiful web pages. I have been in the field for nearly 2 years, and have been loving every minute of it. I am a blogger, entrepreneur, designer, developer, and overall thinker.”</p>
         </div>
       </div>
@@ -447,35 +447,45 @@
       t1.from("#skills", {x:400,ease:Power2.easeOut,duration:1});
       let t2=gsap.timeline({
         scrollTrigger:{
-          trigger:'#skills',
+          trigger:'#about-me-img',
          
         //  scrub:true
         }
       })
       t2.from(" .about-class", {x:400,duration:1,ease:Power2.easeOut,stagger:1} );
 
-      if (window.matchMedia("(max-width: 700px)").matches) {
-  /* The viewport is less than, or equal to, 700 pixels wide */
-        $("#about").removeClass("media");
-        $("#about>img").css('margin-left','10%');
+  //     if (window.matchMedia("(max-width: 700px)").matches) {
+  // /* The viewport is less than, or equal to, 700 pixels wide */
+  //       $("#about").removeClass("media");
+  //       $("#about>img").css('margin-left','10%');
 
         
-      } else {
-        /* The viewport is greater than 700 pixels wide */
-        $("#about").addClass("media");
-      }
+  //     } else {
+  //       /* The viewport is greater than 700 pixels wide */
+  //       $("#about").addClass("media");
+  //     }
 
 
       function checkHover() {
-        if (window.matchMedia("(max-width: 800px)").matches) {
+        if (window.matchMedia("(max-width: 750px)").matches) {
   /* The viewport is less than, or equal to, 700 pixels wide */
         $("#about").removeClass("media");
-        $("#about>img").css('margin-left','0%');
+        $("#about>img").css('height','300px');
+        $("#about>img").css('object-fit','cover');
+        $("#about>img").css('border','2px dotted white');
+        $("#about>img").css('border-radius','50%');
+        $("#about>img").css('margin-left','15%');
+
 
         
       } else {
         /* The viewport is greater than 700 pixels wide */
         $("#about").addClass("media");
+        $("#about>img").css('height','500px');
+        $("#about>img").css('object-fit','cover');
+        // $("#about>img").css('border','2px dotted white');
+         $("#about>img").css('border-radius','0%');
+        // $("#about>img").css('margin-left','-4px');
       }
       }
 
